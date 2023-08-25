@@ -3,6 +3,7 @@ import { Context, server } from "../main";
 import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import LogoMark from "../assets/Logomark.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -45,6 +46,9 @@ const Login = () => {
     <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500">
       <section>
         <form onSubmit={submitHandler} className="w-96">
+          <div className="mb-6 w-full grid place-content-center">
+            <img src={LogoMark} alt="LogoMark" />
+          </div>
           <h1 className="text-3xl font-semibold mb-3 text-gray-900 text-center">
             Welcome back
           </h1>

@@ -44,7 +44,7 @@ const Register = () => {
   if (isAuthenticated) return <Navigate to={"/logout"} />;
 
   return (
-    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500">
+    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500 px-4">
       <section>
         <form onSubmit={submitHandler} className="w-96">
           <h1 className="text-3xl font-semibold mb-3 text-gray-900">Sign up</h1>

@@ -29,7 +29,7 @@ const Logout = () => {
   if (!isAuthenticated) return <Navigate to={"/"} />;
 
   return (
-    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500">
+    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500 px-4">
       <form onSubmit={logoutHandler} className="w-96">
         <button
           disabled={loading}
