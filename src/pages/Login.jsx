@@ -39,31 +39,60 @@ const Login = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to={"/"} />;
+  if (isAuthenticated) return <Navigate to={"/logout"} />;
 
   return (
-    <div className="login">
+    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500">
       <section>
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="w-96">
+          <h1 className="text-3xl font-semibold mb-3 text-gray-900 text-center">
+            Welcome back
+          </h1>
+          <p className="text-gray-600 mb-8 text-center">
+            Welcome back! Please enter your details.
+          </p>
+
+          <label htmlFor="email" className="text-gray-700 text-sm block mb-1">
+            Email*
+          </label>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             required
+            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
           />
+
+          <label
+            htmlFor="password"
+            className="text-gray-700 text-sm block mb-1"
+          >
+            Password*
+          </label>
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="Enter your password"
             required
+            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
           />
-          <button disabled={loading} type="submit">
+
+          <button
+            disabled={loading}
+            type="submit"
+            className="bg-purple-600 p-2 text-white w-full rounded-md mt-1"
+          >
             Log In
           </button>
-          <h4>Or</h4>
-          <Link to="/register">Sign Up</Link>
+
+          <div className="text-center mt-8 text-sm">
+            <span className="text-gray-600 mr-2">Do not have an account?</span>
+            <Link to="/register" className="text-purple-600">
+              Sign up
+            </Link>
+          </div>
         </form>
       </section>
     </div>
