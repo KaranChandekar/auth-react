@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Context, server } from "../main";
 import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -40,7 +40,12 @@ const Login = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to={"/logout"} />;
+  // if (isAuthenticated) return <Navigate to={"/logout"} />;
+
+  if (isAuthenticated) {
+    window.location.href = "https://salk-ai-chatbot-ui.vercel.app/";
+    return null;
+  }
 
   return (
     <div className="mx-auto h-screen-minus-header grid place-content-center text-white bg-gradient-to-b from-[#030003] from-40% to-[#6031BC] to-100%">
