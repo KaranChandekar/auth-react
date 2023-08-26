@@ -52,8 +52,10 @@ const Register = () => {
             <img src={Logo} alt="SalkAI" className="w-14" />
           </div>
           <h1 className="text-3xl font-semibold mb-3 text-center">Sign up</h1>
-          <p className="mb-8 font-normal text-center">Start your 30-days free trial!</p>
-        
+          <p className="mb-8 font-normal text-center">
+            Start your 30-days free trial!
+          </p>
+
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -89,8 +91,8 @@ const Register = () => {
             Get started
           </button>
 
-          <div className="text-center mt-8">
-            <span className="mr-2 text-sm">Already have an account?</span>
+          <div className="text-center mt-8 text-sm">
+            <span className="mr-2">Already have an account?</span>
             <Link to="/login" className="font-semibold">
               Log In
             </Link>

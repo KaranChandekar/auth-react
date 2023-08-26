@@ -82,10 +82,14 @@ const Login = () => {
             Log In
           </button>
 
-          <div className="text-center mt-8">
-            <span className="font-normal mr-2 text-sm">Don&apos;t have an account?</span>
-            <Link to="/" className="font-semibold">Sign up</Link>
-          </div>  
+          <div className="text-center mt-8 text-sm">
+            <span className="font-normal mr-2">
+              Don&apos;t have an account?
+            </span>
+            <Link to="/" className="font-semibold">
+              Sign up
+            </Link>
+          </div>
         </form>
       </section>
     </div>
