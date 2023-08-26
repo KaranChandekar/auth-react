@@ -42,7 +42,12 @@ const Register = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to={"/logout"} />;
+  // if (isAuthenticated) return <Navigate to={"/logout"} />;
+
+  if (isAuthenticated) {
+    window.location.href = "https://salk-ai-chatbot-ui.vercel.app/";
+    return null;
+  }
 
   return (
     <div className="mx-auto h-screen-minus-header grid place-content-center text-white bg-gradient-to-b from-[#030003] from-40% to-[#6031BC] to-100%">
