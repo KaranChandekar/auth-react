@@ -3,7 +3,7 @@ import { Context, server } from "../main";
 import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
-import LogoMark from "../assets/Logomark.png";
+import Logo from "../assets/logo.webp";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,60 +43,49 @@ const Login = () => {
   if (isAuthenticated) return <Navigate to={"/logout"} />;
 
   return (
-    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500">
-      <section>
+    <div className="mx-auto h-screen-minus-header grid place-content-center text-white bg-gradient-to-b from-[#030003] from-40% to-[#6031BC] to-100%">
+      <section className="max-w-[1250px]">
         <form onSubmit={submitHandler} className="w-96">
           <div className="mb-6 w-full grid place-content-center">
-            <img src={LogoMark} alt="LogoMark" />
+            <img src={Logo} alt="SalkAI" className="w-14" />
           </div>
-          <h1 className="text-3xl font-semibold mb-3 text-gray-900 text-center">
+          <h1 className="text-3xl font-semibold mb-3 text-center">
             Welcome back
           </h1>
-          <p className="text-gray-600 mb-8 text-center">
-            Welcome back! Please enter your details.
+          <p className="mb-8 font-normal text-center">
+            Enter your credentials to access your account
           </p>
 
-          <label htmlFor="email" className="text-gray-700 text-sm block mb-1">
-            Email*
-          </label>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
             required
-            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
+            className="w-full border rounded-lg px-3 text-gray-500 py-2 mb-4 outline-none"
           />
 
-          <label
-            htmlFor="password"
-            className="text-gray-700 text-sm block mb-1"
-          >
-            Password*
-          </label>
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter your password"
             required
-            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
+            className="w-full border rounded-lg px-3 text-gray-500 py-2 mb-4 outline-none"
           />
 
           <button
             disabled={loading}
             type="submit"
-            className="bg-purple-600 p-2 text-white w-full rounded-md mt-1"
+            className="bg-purple-600 font-semibold p-2 text-white w-full rounded-lg mt-1"
           >
             Log In
           </button>
 
-          <div className="text-center mt-8 text-sm">
-            <span className="text-gray-600 mr-2">Do not have an account?</span>
-            <Link to="/register" className="text-purple-600">
-              Sign up
-            </Link>
-          </div>
+          <div className="text-center mt-8">
+            <span className="font-normal mr-2 text-sm">Don&apos;t have an account?</span>
+            <Link to="/" className="font-semibold">Sign up</Link>
+          </div>  
         </form>
       </section>
     </div>

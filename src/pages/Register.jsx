@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Context, server } from "../main";
 import { toast } from "react-hot-toast";
+import Logo from "../assets/logo.webp";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -44,61 +45,53 @@ const Register = () => {
   if (isAuthenticated) return <Navigate to={"/logout"} />;
 
   return (
-    <div className="max-w-[1250px] mx-auto h-screen-minus-header grid place-content-center text-gray-500 px-4">
-      <section>
+    <div className="mx-auto h-screen-minus-header grid place-content-center text-white bg-gradient-to-b from-[#030003] from-40% to-[#6031BC] to-100%">
+      <section className="max-w-[1250px]">
         <form onSubmit={submitHandler} className="w-96">
-          <h1 className="text-3xl font-semibold mb-3 text-gray-900">Sign up</h1>
-          <p className="text-gray-600 mb-8">Start your 30-day free trial.</p>
-          <label htmlFor="name" className="text-gray-700 text-sm block mb-1">
-            Name*
-          </label>
+          <div className="mb-6 w-full grid place-content-center">
+            <img src={Logo} alt="SalkAI" className="w-14" />
+          </div>
+          <h1 className="text-3xl font-semibold mb-3 text-center">Sign up</h1>
+          <p className="mb-8 font-normal text-center">Start your 30-days free trial!</p>
+        
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Enter your name"
             required
-            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 border-gray-300 outline-none"
+            className="w-full border rounded-lg px-3 text-gray-500 py-2 mb-4 border-gray-300 outline-none"
           />
 
-          <label htmlFor="email" className="text-gray-700 text-sm block mb-1">
-            Email*
-          </label>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
             required
-            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
+            className="w-full border rounded-lg px-3 text-gray-500 py-2 mb-4 outline-none"
           />
 
-          <label
-            htmlFor="password"
-            className="text-gray-700 text-sm block mb-1"
-          >
-            Password*
-          </label>
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter your password"
             required
-            className="w-full border rounded-md px-3 text-gray-500 py-2 mb-5 outline-none"
+            className="w-full border rounded-lg px-3 text-gray-500 py-2 mb-4 outline-none"
           />
 
           <button
             disabled={loading}
             type="submit"
-            className="bg-purple-600 p-2 text-white w-full rounded-md mt-1"
+            className="bg-purple-600 p-2 font-semibold text-white w-full rounded-lg mt-1"
           >
             Get started
           </button>
 
-          <div className="text-center mt-8 text-sm">
-            <span className="text-gray-600 mr-2">Already have an account?</span>
-            <Link to="/" className="text-purple-600">
+          <div className="text-center mt-8">
+            <span className="mr-2 text-sm">Already have an account?</span>
+            <Link to="/login" className="font-semibold">
               Log In
             </Link>
           </div>

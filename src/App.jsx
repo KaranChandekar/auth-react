@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
       <Toaster />
